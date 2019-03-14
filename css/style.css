@@ -9,8 +9,15 @@ body{
     padding-bottom: 30%;
     float: left;
     margin: 1.66%;
+    border-radius: 15%;
+    -webkit-transition: background 0.3s;
+    -moz-transition: background 0.3s;
 }
 
+
+#colourDisplay{
+    font-size: 200%;
+}
 
 h1{
     text-align: center;
@@ -18,6 +25,11 @@ h1{
     margin: 0;
     font-weight: normal;
     text-transform: uppercase;
+    line-height: 1.1;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    -webkit-transition: background 0.3s;
+    -moz-transition: background 0.3s;
 }
 
 #stripe {
@@ -25,8 +37,31 @@ h1{
     height: 27px;
     text-align: center;
     color: black;
+    margin-top: 1.66%;
+}
+
+#message{
+    display: inline-block;
+    width: 20%;
 }
 
 .selected {
-    background-color: blue;
+    background-color:#e9c35b;
+}
+
+button{
+    border:none;
+    background: none;
+    text-transform: uppercase;
+    height: 100%;
+    letter-spacing: 1px;
+    font-size: inherit;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    outline: none;
+}
+
+button:hover{
+    color: white;
+    background: #482728;
 }

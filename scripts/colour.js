@@ -17,6 +17,8 @@ easy.addEventListener("click", function () {
     colours = generateRandomColors(nrOfSq);
     pickedColor = pickColour();
     colourDisplay.textContent = pickedColor;
+    header.style.backgroundColor = "#482728";
+    messageDisplay.textContent = null;
     for (var i = 0; i < squares.length; i++) {
         if (colours[i]) {
             squares[i].style.backgroundColor = colours[i];
@@ -35,10 +37,12 @@ hard.addEventListener("click", function () {
     colours = generateRandomColors(nrOfSq);
     pickedColor = pickColour();
     colourDisplay.textContent = pickedColor;
+    header.style.backgroundColor = "#482728";
+    messageDisplay.textContent = null;
     for (var i = 0; i < squares.length; i++) {
-            squares[i].style.backgroundColor = colours[i];
-            squares[i].style.display = "block";
-        };
+        squares[i].style.backgroundColor = colours[i];
+        squares[i].style.display = "block";
+    };
 });
 
 colourDisplay.textContent = pickedColor;
@@ -47,11 +51,12 @@ resetBtn.addEventListener("click", function () {
     colours = generateRandomColors(nrOfSq);
     pickedColor = pickColour();
     colourDisplay.textContent = pickedColor;
+    header.style.backgroundColor = "#482728";
     for (var i = 0; i < squares.length; i++) {
         squares[i].style.backgroundColor = colours[i];
     };
     messageDisplay.textContent = null;
-    header.style.backgroundColor = "#482728";
+
     resetBtn.textContent = "New Colours";
 });
 
@@ -67,14 +72,14 @@ for (var i = 0; i < squares.length; i++) {
         var clicked = this.style.backgroundColor;
         //compare colour
         if (clicked === pickedColor) {
-            messageDisplay.textContent = "WINNER! CONGRATZ!";
+            messageDisplay.textContent = "Correct.";
             changeColours(clicked);
             header.style.backgroundColor = clicked;
             resetBtn.textContent = "Play again?";
 
         } else {
             this.style.backgroundColor = "#482728";
-            messageDisplay.textContent = "Try again";
+            messageDisplay.textContent = "Wrong. Try again.";
         };
     });
 }
