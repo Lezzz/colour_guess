@@ -1,15 +1,32 @@
 body{
-    background-color: #c0f8d1;
+    background-color: #482728;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .square{
     width: 30%;
-    background: purple;
     padding-bottom: 30%;
     float: left;
     margin: 1.66%;
 }
 
+
 h1{
-    color: #482728;
+    text-align: center;
+    color: white;
+    margin: 0;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+#stripe {
+    background-color: white;
+    height: 27px;
+    text-align: center;
+    color: black;
+}
+
+.selected {
+    background-color: blue;
 }

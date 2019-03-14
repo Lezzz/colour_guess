@@ -9,15 +9,19 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
     <link rel="stylesheet" href="css/style.css" class="stylesheet">
     <title>ColourGuess</title>
 </head>
 
 <body>
-    <h1>The Great <span id ="colourDisplay">RGB</span> Colour Game!</h1>
+    <h1>The<br /> Great <br /><span id ="colourDisplay">RGB</span><br />  Colour<br /> Game!<br /></h1>
 
-    <div>
+    <div id ="stripe">
         <span id ="message"></span>
+        <button id="reset">New Colours</button>
+        <button id="easy" >Easy</button>
+        <button id="hard" class="selected">Hard</button>
     </div>
     
     <div class="container">

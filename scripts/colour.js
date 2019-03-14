@@ -1,13 +1,59 @@
-var colours = generateRandomColors(6);
-
+var nrOfSq = 6;
+var colours = generateRandomColors(nrOfSq);
+var resetBtn = document.querySelector("#reset");
 var squares = document.querySelectorAll(".square");
 var header = document.querySelector("h1");
 var pickedColor = pickColour();
 var colourDisplay = document.querySelector("#colourDisplay");
 var messageDisplay = document.querySelector("#message");
+var easy = document.querySelector("#easy");
+var hard = document.querySelector("#hard");
+var nrOfSq = 6;
+
+easy.addEventListener("click", function () {
+    hard.classList.remove("selected");
+    easy.classList.add("selected");
+    nrOfSq = 3;
+    colours = generateRandomColors(nrOfSq);
+    pickedColor = pickColour();
+    colourDisplay.textContent = pickedColor;
+    for (var i = 0; i < squares.length; i++) {
+        if (colours[i]) {
+            squares[i].style.backgroundColor = colours[i];
+        } else {
+            squares[i].style.display = "none";
+        };
+    };
+});
+
+
+
+hard.addEventListener("click", function () {
+    hard.classList.add("selected");
+    easy.classList.remove("selected");
+    nrOfSq = 6;
+    colours = generateRandomColors(nrOfSq);
+    pickedColor = pickColour();
+    colourDisplay.textContent = pickedColor;
+    for (var i = 0; i < squares.length; i++) {
+            squares[i].style.backgroundColor = colours[i];
+            squares[i].style.display = "block";
+        };
+});
 
 colourDisplay.textContent = pickedColor;
 
+resetBtn.addEventListener("click", function () {
+    colours = generateRandomColors(nrOfSq);
+    pickedColor = pickColour();
+    colourDisplay.textContent = pickedColor;
+    for (var i = 0; i < squares.length; i++) {
+        squares[i].style.backgroundColor = colours[i];
+    };
+    messageDisplay.textContent = null;
+    header.style.backgroundColor = "#482728";
+    resetBtn.textContent = "New Colours";
+});
 
 for (var i = 0; i < squares.length; i++) {
     //initial colours
@@ -24,9 +70,10 @@ for (var i = 0; i < squares.length; i++) {
             messageDisplay.textContent = "WINNER! CONGRATZ!";
             changeColours(clicked);
             header.style.backgroundColor = clicked;
-            
+            resetBtn.textContent = "Play again?";
+
         } else {
-            this.style.backgroundColor = "#c0f8d1";
+            this.style.backgroundColor = "#482728";
             messageDisplay.textContent = "Try again";
         };
     });
